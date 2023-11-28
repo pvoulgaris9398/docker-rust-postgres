@@ -19,7 +19,7 @@ impl From<Row> for User {
 
 impl User {
     pub async fn all<C: GenericClient>(client: &C) -> Result<Vec<User>, Error> {
-        let stmt = client.prepare("SELECT id, login, 'name' = 'Napoleon' FROM users").await?;
+        let stmt = client.prepare("SELECT id, login, "Napoleon" as "Name" FROM users").await?;
         let rows = client.query(&stmt, &[]).await?;
 
         Ok(rows.into_iter().map(User::from).collect())
