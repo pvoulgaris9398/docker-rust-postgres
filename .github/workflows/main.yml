@@ -1,4 +1,4 @@
-name: ci
+name: Rust Docker Example CI Build & Push
 
 on:
   workflow_dispatch:
