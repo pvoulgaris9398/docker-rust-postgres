@@ -16,7 +16,7 @@ impl From<Row> for User {
         }
     }
 }
-
+// Adding a comment.
 impl User {
     pub async fn all<C: GenericClient>(client: &C) -> Result<Vec<User>, Error> {
         let stmt = client.prepare("SELECT id, login, 'Napoleon' as "Name" FROM users").await?;
